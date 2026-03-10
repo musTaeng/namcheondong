@@ -8,47 +8,37 @@
 </head>
 <body>
     <header>
-        <h1><a href="/">익하이브</a></h1>
+        <h1><a href="#home">익하이브</a></h1>
         <nav>
-            <ul>
-                <li><a href="#">자유게시판</a></li>
-                <li><a href="#">익현이지도</a></li>
-                <li><a href="#">자료실</a></li>
-                <li><a href="#">미래대통령</a></li>
-                <li><a href="#">헬마우스</a></li>
-                <li><a href="#">묘장군</a></li>
-                <li><a href="#">거없</a></li>
+            <ul id="main-nav">
+                <li><a href="#free-board" data-title="자유게시판">자유게시판</a></li>
+                <li><a href="#map" data-title="익현이지도">익현이지도</a></li>
+                <li><a href="#archive" data-title="자료실">자료실</a></li>
+                <li><a href="#president" data-title="미래대통령">미래대통령</a></li>
+                <li><a href="#hellmouth" data-title="헬마우스">헬마우스</a></li>
+                <li><a href="#general" data-title="묘장군">묘장군</a></li>
+                <li><a href="#nothing" data-title="거없">거없</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle dark mode">
-                <span class="icon">🌙</span>
-            </button>
+            <div class="nav-controls">
+                <a href="#contact" class="contact-link">제휴 문의</a>
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
         </nav>
     </header>
     <main>
-      <section id="contact">
-        <h2>제휴 문의</h2>
-        <p>익하이브와 함께 성장할 파트너를 찾습니다. 아래 양식을 작성해 주세요.</p>
-        
-        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-group">
-            <label for="name">이름/기업명</label>
-            <input type="text" id="name" name="name" required placeholder="홍길동">
-          </div>
-          
-          <div class="form-group">
-            <label for="email">이메일 주소</label>
-            <input type="email" id="email" name="email" required placeholder="example@email.com">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">문의 내용</label>
-            <textarea id="message" name="message" required placeholder="제휴 제안 내용을 상세히 입력해 주세요."></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">문의하기</button>
-        </form>
-      </section>
+      <div id="content-area">
+        <!-- 동적으로 게시판 내용이 삽입됩니다 -->
+      </div>
+
+      <!-- Disqus 댓글 영역 -->
+      <div id="disqus_container" style="display: none; margin-top: 3rem; padding: 2rem; background: var(--header-bg); border-radius: 12px; border: 1px solid var(--header-border);">
+        <div id="disqus_thread"></div>
+      </div>
     </main>
+
     <script src="main.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>
